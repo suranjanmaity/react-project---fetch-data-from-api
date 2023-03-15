@@ -24,7 +24,7 @@ export default class Fetch extends Component{
             return(
             <article key={item.id}
             className="
-            p-1 m-1
+            w-2/5 p-4 m-1
             bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
             rounded-md
             flex flex-col justify-center items-center
@@ -32,19 +32,23 @@ export default class Fetch extends Component{
                 {/* upper div */}
                 <div className="
                 flex flex-row justify-between
+                w-full
                 ">
                     {/* left div */}
                     <div className="
+                    
                     ">
                         <h3 className="
-                        text-lg text-base text-white
+                        text-xl text-white
+                        font-semibold font-mono
                         ">
                             {item.company.name}
                         </h3>
                         <h3 className="
                         text-sm
+                        font-light
                         ">
-                            {item.company.catchPhrase}
+                            {item.company.bs}
                         </h3>
                     </div>
 
@@ -70,17 +74,19 @@ export default class Fetch extends Component{
                     flex flex-col items-center
                     ">
                     <h2 className="
-                        text-lg
+                        text-lg text-white
+                        font-bold font-sans italic
                         ">
-                        {item.company.bs}
+                        {item.company.catchPhrase}
                     </h2>
                     <h2 className="
                         text-2xl
+                        font-serif
                         ">
                         {item.name}
                     </h2>
                     <h2 className="
-                        text-xl
+                        text-base
                         ">
                         {item.email}
                     </h2>
