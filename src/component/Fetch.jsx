@@ -25,6 +25,10 @@ export default class Fetch extends Component{
             <article key={item.id}
             className="
             w-2/5 p-4 m-1
+            sm:w-4/5 sm:p-2 m-1 
+            md:w-2/5
+            lg:w-2/5
+            2xl:w-1/4
             bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
             rounded-md
             flex flex-col justify-center items-center

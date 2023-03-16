@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Fetch from "./component/Fetch";
+import Search from "./component/Search";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -10,8 +11,12 @@ export default class App extends Component {
   p-4
   bg-black
   ">
-
+    <Search></Search>
+    <div className="
+    flex flex-wrap justify-evenly
+    ">
     <Fetch></Fetch>
+    </div>
   </div>
     )
 }
