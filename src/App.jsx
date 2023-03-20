@@ -12,6 +12,10 @@ export default class App extends Component {
   bg-black
   ">
     <Search></Search>
+    <span className="
+    text-white block
+    ">All users</span>
+
     <div className="
     flex flex-wrap justify-evenly
     ">

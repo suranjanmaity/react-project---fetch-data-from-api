@@ -5,20 +5,22 @@ export default class Fetch extends Component{
    
         this.state = {
             items: [],
+            item:{}
         };
     }
-    componentDidMount() {
+    componentDidMount(props) {
         fetch(
-            "https://jsonplaceholder.typicode.com/users")
-            .then((res) => res.json())
-            .then((json) => {
-                this.setState({
-                    items: json,
-                });
-            })
+        "https://api.github.com/users")
+        .then((res) => res.json())
+        .then((users) => {
+            this.setState({
+                items: users,
+            });
+        })
+        
     }
     render(){
-        const {items}=this.state;
+            const {items}=this.state;
         return (
             items.map((item)=>{
             return(
@@ -31,69 +33,21 @@ export default class Fetch extends Component{
             2xl:w-1/4
             bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
             rounded-md
-            flex flex-col justify-center items-center
+            flex flex-row justify-evenly items-center
             ">
-                {/* upper div */}
-                <div className="
-                flex flex-row justify-between
-                w-full
-                ">
-                    {/* left div */}
-                    <div className="
-                    
-                    ">
-                        <h3 className="
-                        text-xl text-white
-                        font-semibold font-mono
-                        ">
-                            {item.company.name}
-                        </h3>
-                        <h3 className="
-                        text-sm
-                        font-light
-                        ">
-                            {item.company.bs}
-                        </h3>
-                    </div>
-
-                    {/* right div */}
-                    <div className="
-                    flex flex-col items-end
-                    ">
-                        <h4 className="
-                        text-xs
-                        ">
-                            {item.phone}
-                        </h4>
-                        <h4 className="
-                        text-xs
-                        ">
-                            {item.address.city}
-                        </h4>
-                    </div>
+                <div>
+                    <img src={item.avatar_url} alt="_USER_"
+                    className="
+                    w-1/2
+                    " />
                 </div>
-
-                {/* lower div */}
                 <div className="
-                    flex flex-col items-center
-                    ">
-                    <h2 className="
-                        text-lg text-white
-                        font-bold font-sans italic
-                        ">
-                        {item.company.catchPhrase}
-                    </h2>
-                    <h2 className="
-                        text-2xl
-                        font-serif
-                        ">
-                        {item.name}
-                    </h2>
-                    <h2 className="
-                        text-base
-                        ">
-                        {item.email}
-                    </h2>
+                flex flex-col justify-evenly items-center
+                ">
+                    <h1 className="
+                    text-3xl text-white font-mono
+                    ">{item.login}</h1>
+                    <a href={item.html_url}>Github</a>
                 </div>
             </article>
             )})
