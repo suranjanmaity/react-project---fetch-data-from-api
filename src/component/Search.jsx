@@ -72,7 +72,7 @@ function Search() {
         <article key={user.id}
           className="
           w-3/5 p-4 m-1
-          sm:w-4/5 sm:p-2 m-1 
+          sm:w-full
           md:w-3/5
           lg:w-3/5
           2xl:w-1/4
@@ -122,6 +122,7 @@ function Search() {
     return (
       <div className="
       w-1/2
+      sm:w-full
       mb-4
       flex
       gap-1
