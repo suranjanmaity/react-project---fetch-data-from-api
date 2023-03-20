@@ -7,14 +7,14 @@ export default class App extends Component {
 
 }render(){
   return (<div className="
-  flex flex-wrap justify-evenly
+  flex flex-col justify-evenly items-center
   p-4
   bg-black
   ">
     <Search></Search>
     <span className="
     text-white block
-    ">All users</span>
+    ">Popular users</span>
 
     <div className="
     flex flex-wrap justify-evenly

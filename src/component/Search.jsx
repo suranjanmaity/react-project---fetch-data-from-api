@@ -3,7 +3,7 @@ import Fetch from "./Fetch";
 function Search() {
     
     const [users, setUsers] = useState([]);
-    let [searchUser, setSearchUser] = useState("atmos");
+    let [searchUser, setSearchUser] = useState("");
     let [search, setSearch] = useState(0);
     
     let [user, setUser] = useState([]);
@@ -81,13 +81,16 @@ function Search() {
           flex flex-row justify-evenly items-center
           ">
               <div>
-                  <img src={user.avatar_url} alt="_USER_"
+                  <img src={user.avatar_url} alt="No user found"
                   className="
                   w-1/2
                   " />
                   <h2 className="
                   text-xl text-white font-mono
                   ">{user.name}</h2>
+                  <h2 className="
+                  text-sm text-white font-mono
+                  ">{user.created_at}</h2>
               </div>
               <div className="
               w-4/5
@@ -97,10 +100,14 @@ function Search() {
                 text-xl font-mono
                 ">{user.location}</h2>
                 <h2 className="
+                text-l text-white font-mono
+                ">{user.company}</h2>
+                <h2 className="
                 text-3xl text-white font-mono
                 ">{user.login}</h2>
                 
                 <a href={user.html_url}>Github</a>
+                <p>Repository : {user.public_repos}</p>
               <div className="
                 flex flex-row justify-between gap-2
                 ">
@@ -111,7 +118,6 @@ function Search() {
         </article>
       </div>
     );
-    setSearch(false);
   } else {
     return (
       <div className="
