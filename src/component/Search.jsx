@@ -129,7 +129,8 @@ function Search() {
   } else {
     return (
       <div className="
-      w-full
+      w-1/2
+      sm:w-full
       mb-4
       flex justify-center
       gap-1
