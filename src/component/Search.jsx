@@ -72,10 +72,10 @@ function Search() {
         <article key={user.id}
           className="
           w-3/5 p-4 m-1
-          sm:w-4/5 sm:p-2 m-1 
-          md:w-3/5
-          lg:w-3/5
-          2xl:w-1/4
+          sm:w-full sm:p-2 m-1 
+          md:w-4/5
+          lg:w-4/5
+          2xl:w-2/4
           bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
           rounded-md
           flex flex-row justify-evenly items-center
@@ -87,9 +87,10 @@ function Search() {
                   " />
                   <h2 className="
                   text-xl text-white font-mono
+                  sm:text-lg
                   ">{user.name}</h2>
                   <h2 className="
-                  text-sm text-white font-mono
+                  text-xs text-white font-mono
                   ">{user.created_at}</h2>
               </div>
               <div className="
@@ -98,12 +99,15 @@ function Search() {
               ">
                 <h2 className="
                 text-xl font-mono
+                sm:text-lg
                 ">{user.location}</h2>
                 <h2 className="
-                text-l text-white font-mono
+                text-lg text-white font-mono
+                sm:text-base
                 ">{user.company}</h2>
                 <h2 className="
                 text-3xl text-white font-mono
+                sm:text-2xl
                 ">{user.login}</h2>
                 
                 <a href={user.html_url}>Github</a>
@@ -111,8 +115,12 @@ function Search() {
               <div className="
                 flex flex-row justify-between gap-2
                 ">
-                  <p>Follower : {user.followers}</p>
-                  <p>Following : {user.following}</p>
+                  <p className="
+                  sm:text-sm
+                  ">Follower : {user.followers}</p>
+                  <p className="
+                  sm:text-sm
+                  ">Following : {user.following}</p>
               </div>
           </div>
         </article>
@@ -121,15 +129,16 @@ function Search() {
   } else {
     return (
       <div className="
-      w-1/2
+      w-full
       mb-4
-      flex
+      flex justify-center
       gap-1
       ">
         <input list="searchList" type="text" name="search" id="search" placeholder="Search name" className="
         rounded-md
         p-1
         w-full
+        lg:w-1/2
         " onChange={handleSearchUser}/>
         <datalist id="searchList">
             {
